@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>报价详情</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <!-- 引入 swiper.css -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ontouchstart>
+    <div class="swiper-mc">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="images/8.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/8.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/8.png" alt="">
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="page__bd_spacing list-txt after-spacing">
+        <p>日期：2017.06.06   16:40</p>
+        <p>商品报价：<i>1.00 元／斤</i></p>
+        <p>商品：土豆 四两以上</p>
+        <p>地址：河北省秦皇岛市卢龙县朱家桥村</p>
+        <p>电话：13888888888</p>
+        <p>联系人：张先生</p>
+        <p>备注：联系时请说在瓜瓜报价平台上看到的</p>
+    </div>
+    <a href="javascript:;" class="weui-btn weui-btn_warn btn-bottom">打电话</a>
+
+    
+    <!-- 引入 WeUI JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/weui.min.js"></script>
+    <!-- 引入 swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <script>
+        // Initialize Swiper
+
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>我的商品</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ontouchstart class="bg-grey">
+    <div class="page__bd_spacing">
+        <div class="goods-list">
+            <i class="delate-icon" id="showIOSDialog1"></i>
+            <dl>
+                <dt>滕州－甘蓝－铁头</dt>
+                <dd>
+                    <img src="images/goods_03.png" class="level" />
+                    <span>优级</span>
+                </dd>
+                <dd>
+                    <img src="images/goods_06.png" class="address" />
+                    <span>云南省昆明市晋宁县晋城镇</span>
+                </dd>
+                <dd>
+                    <img src="images/goods_08.png" class="base-name" />
+                    <span>美农云南种植基地</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="goods-list">
+            <i class="delate-icon"></i>
+            <dl>
+                <dt>滕州－甘蓝－铁头</dt>
+                <dd>
+                    <img src="images/goods_03.png" class="level" />
+                    <span>优级</span>
+                </dd>
+                <dd>
+                    <img src="images/goods_06.png" class="address" />
+                    <span>云南省昆明市晋宁县晋城镇</span>
+                </dd>
+                <dd>
+                    <img src="images/goods_08.png" class="base-name" />
+                    <span>美农云南种植基地</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="goods-list">
+            <i class="delate-icon"></i>
+            <dl>
+                <dt>滕州－甘蓝－铁头</dt>
+                <dd>
+                    <img src="images/goods_03.png" class="level" />
+                    <span>优级</span>
+                </dd>
+                <dd>
+                    <img src="images/goods_06.png" class="address" />
+                    <span>云南省昆明市晋宁县晋城镇</span>
+                </dd>
+                <dd>
+                    <img src="images/goods_08.png" class="base-name" />
+                    <span>美农云南种植基地</span>
+                </dd>
+            </dl>
+        </div>
+        <a href="javascript:;" class="weui-btn weui-btn_warn mc-top3">新商品</a>
+    </div>
+    <div id="dialogs">
+        <!--BEGIN dialog1-->
+            <div class="js_dialog" id="iosDialog1" style="display: none;">
+                <div class="weui-mask"></div>
+                <div class="weui-dialog">
+                    <!-- <div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></div> -->
+                    <div class="weui-dialog__bd">确认删除该商品？</div>
+                    <div class="weui-dialog__ft">
+                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">是</a>
+                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">否</a>
+                    </div>
+                </div>
+            </div>
+        <!--END dialog1-->
+    </div>
+    
+    <!-- 引入 WeUI JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/weui.min.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            var $iosDialog1 = $('#iosDialog1');
+
+            $('#dialogs').on('click', '.weui-dialog__btn', function(){
+                $(this).parents('.js_dialog').fadeOut(200);
+            });
+
+            $('.delate-icon').on('click', function(){
+                $iosDialog1.fadeIn(200);
+            });
+        });
+    </script>
+</body>
+</html>

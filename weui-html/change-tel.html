@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>修改手机号</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ontouchstart>
+    <div class="title-page">请在下方输入138****1234手机<br/>收到的验证码</div>
+    <div class="weui-cells weui-cells_form cells-t">
+        <div class="weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">验证码</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="请输入验证码"/>
+            </div>
+            <div class="weui-cell__ft">
+                <button class="weui-vcode-btn weui-vcode-btn-mc">发送验证码</button>
+            </div>
+        </div>
+
+        <!-- 输入手机号后的按钮状态 begin -->
+        <div class="weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">验证码</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="18611346248"/>
+            </div>
+            <div class="weui-cell__ft">
+                <button class="weui-vcode-btn weui-vcode-btn-mc weui-vcode-btn-active">发送验证码</button>
+            </div>
+        </div>
+        <!-- 按钮状态 end -->
+        
+        <!-- weui-cell_warn 为错误提示状态 -->
+        <div class="weui-cell weui-cell_warn">
+            <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" placeholder="请输入验证码"/>
+            </div>
+            <div class="weui-cell__ft">
+                <i class="weui-icon-warn"></i>
+            </div>
+        </div>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <a href="javascript:;" class="weui-btn weui-btn_warn mc-top4">下一步</a>
+    </div>
+
+    <!-- 引入 WeUI JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/weui.min.js"></script>
+</body>
+</html>

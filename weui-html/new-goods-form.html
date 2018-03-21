@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>新商品表单</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ontouchstart>
+    <div class="weui-cells cells-t">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p><span class="star-red">&nbsp;</span>一级分类</label>
+            </div>
+            <div class="weui-cell__ft">蔬菜</div>
+        </div>
+        <div class="weui-cell weui-cell_access" id="showIOSDialog1">
+            <div class="weui-cell__bd">
+                <p><span class="star-red">*</span>二级分类</p>
+            </div>
+            <div class="weui-cell__ft">请选择二级分类</div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <p><span class="star-red">*</span>商品名称</p>
+            </div>
+            <div class="weui-cell__ft">请选择商品名称</div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <p><span class="star-red">*</span>商品等级</p>
+            </div>
+            <div class="weui-cell__ft">请选择商品等级</div>
+        </div>
+        <div class="weui-cell weui-cell_access address-input">
+            <div class="weui-cell__bd">
+                <p><span class="star-red">*</span>产地地址</p>
+            </div>
+            <div class="weui-cell__ft weui-cell__bd__txtwidth">
+                <!-- <a class="weui-input input-right" id="showPicker" href="#">新疆/乌鲁木齐/乌鲁木齐直辖市</a> -->
+                <input class="weui-input input-right" type="text" value="新疆/乌鲁木齐/乌鲁木齐直辖市" placeholder="请输入详细地址"/>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">详细地址</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input input-right" type="text" placeholder="请输入详细地址"/>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <a href="javascript:;" class="weui-btn weui-btn_warn mc-top4">完 成</a>
+    </div>
+    
+    <div id="dialogs">
+        <!--BEGIN dialog1-->
+        <div class="js_dialog" id="iosDialog1" style="display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__hd"><strong class="weui-dialog__title">二级分类</strong></div>
+                <div class="weui-dialog__bd weui-cells_radio radio-alert">
+                    <label class="weui-cell weui-check__label" for="x11">
+                        <div class="weui-cell__bd">
+                            <p>叶菜类（如白菜、菠菜）</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <input type="radio" class="weui-check" checked="checked" name="radio1" id="x11">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                    </label>
+                    <label class="weui-cell weui-check__label" for="x12">
+                        <div class="weui-cell__bd">
+                            <p>果类（如西葫芦、西红柿）</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <input type="radio" class="weui-check" name="radio1" id="x12">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                    </label>
+                    <label class="weui-cell weui-check__label" for="x13">
+                        <div class="weui-cell__bd">
+                            <p>根茎类（如芹菜、土豆）</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <input type="radio" class="weui-check" name="radio1" id="x13">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                    </label>
+                </div>
+                <!-- <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">是</a>
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">否</a>
+                </div> -->
+            </div>
+        </div>
+</div>
+    
+    <!-- 引入 WeUI JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/weui.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var $iosDialog1 = $('#iosDialog1');
+
+            $('#dialogs').on('click', '.weui-dialog__btn', function(){
+                $(this).parents('.js_dialog').fadeOut(200);
+            });
+
+            $('#showIOSDialog1').on('click', function(){
+                $iosDialog1.fadeIn(200);
+            });
+        });
+        $('#showPicker').on('click', function () {
+            weui.picker([
+                {
+                    label: '北京',
+                    value: '1'
+                }, {
+                    label: '上海',
+                    value: '2'
+                }, {
+                    label: '天津',
+                    value: '3'
+                }
+            ], [
+                {
+                    label: '北京',
+                    value: 'A'
+                }, {
+                    label: 'B',
+                    value: 'B'
+                }, {
+                    label: 'C',
+                    value: 'C'
+                }
+            ],
+            [
+                {
+                    label: 'a',
+                    value: 'a'
+                }, {
+                    label: 'b',
+                    value: 'b'
+                }, {
+                    label: '海淀区',
+                    value: 'c'
+                }
+            ], {
+                defaultValue: ['1', 'A' , 'c'],
+                onChange: function (result) {
+                    console.log(result);
+                },
+                onConfirm: function (result) {
+                    console.log(result);
+                },
+                id: 'multiPickerBtn'
+            });
+        });
+    </script> 
+
+</body>
+</html>

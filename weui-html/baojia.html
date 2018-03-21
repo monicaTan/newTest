@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>查看报价</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <!-- 自定义css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ontouchstart>
+    <dl class="topmenu">
+        <dt>
+            <div class="selectlist">
+                <div class="select_textdiv">
+                    <input type="hidden" value=""/>
+                    <p class="s_text">时间</p><span class="down"><span class="caret"></span></span>
+                </div>
+                <div class="select_textul">
+                    <ul class="select_first_ul">
+                        <li class="focus">
+                            <p>只看今天</p>
+                        </li>
+                        <li>
+                            <p>三天以内</p>
+                        </li>
+                        <li>
+                            <p>全部</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
+        </dt>
+        <dt>
+            <div class="selectlist">
+                <div class="select_textdiv">
+                    <p class="s_text">品类</p>
+                </div>
+            </div>  
+        </dt>
+        <dt>
+            <div class="selectlist">
+                <div class="select_textdiv" id="showPicker">
+                    <input type="hidden" value=""/>
+                    <p class="s_text">地区</p><span class="down"><span class="caret"></span></span>
+                </div>
+            </div>  
+        </dt>
+    </dl>
+    <div class="weui-panel__bd">
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="images/1.png" alt="">
+            </div>
+            <div class="weui-media-box__bd baojia-list">
+                <h4 class="weui-media-box__title">土豆 - <span class="weight-txt">四两以上</span><i>20分钟前</i></h4>
+                <p class="weui-media-box__desc">商品报价：<span class="price-txt">1.00 元／斤</span></p>
+                <p class="weui-media-box__desc">卢龙县：张先生</p>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="images/2.png" alt="">
+            </div>
+            <div class="weui-media-box__bd baojia-list">
+                <h4 class="weui-media-box__title">白菜 - <span class="weight-txt">六两以上</span><i>30分钟前</i></h4>
+                <p class="weui-media-box__desc">商品报价：<span class="price-txt">0.60 元／斤</span></p>
+                <p class="weui-media-box__desc">乌苏里县：欧阳先生</p>
+            </div>
+        </a>
+        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+                <img class="weui-media-box__thumb" src="images/3.png" alt="">
+            </div>
+            <div class="weui-media-box__bd baojia-list">
+                <h4 class="weui-media-box__title">菠菜 - <span class="weight-txt">四两以上</span><i>35分钟前</i></h4>
+                <p class="weui-media-box__desc">商品报价：<span class="price-txt">1.60 元／斤</span></p>
+                <p class="weui-media-box__desc">蓝洛县：张先生</p>
+            </div>
+        </a>
+    </div>
+
+    
+    <!-- 引入 WeUI JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/weui.min.js"></script>
+    <script type="text/javascript" src="js/menudown.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var $iosDialog1 = $('#iosDialog1');
+
+            $('#dialogs').on('click', '.weui-dialog__btn', function(){
+                $(this).parents('.js_dialog').fadeOut(200);
+            });
+
+            $('#showIOSDialog1').on('click', function(){
+                $iosDialog1.fadeIn(200);
+            });
+        });
+        $('#showPicker').on('click', function () {
+            weui.picker([
+                {
+                    label: '北京',
+                    value: '1'
+                }, {
+                    label: '上海',
+                    value: '2'
+                }, {
+                    label: '天津',
+                    value: '3'
+                }
+            ], [
+                {
+                    label: '北京',
+                    value: 'A'
+                }, {
+                    label: 'B',
+                    value: 'B'
+                }, {
+                    label: 'C',
+                    value: 'C'
+                }
+            ],
+            [
+                {
+                    label: 'a',
+                    value: 'a'
+                }, {
+                    label: 'b',
+                    value: 'b'
+                }, {
+                    label: '海淀区',
+                    value: 'c'
+                }
+            ], {
+                defaultValue: ['1', 'A' , 'c'],
+                onChange: function (result) {
+                    console.log(result);
+                },
+                onConfirm: function (result) {
+                    console.log(result);
+                },
+                id: 'multiPickerBtn'
+            });
+        });
+    </script> 
+</body>
+</html>
